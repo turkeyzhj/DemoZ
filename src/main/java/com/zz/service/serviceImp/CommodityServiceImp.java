@@ -29,7 +29,7 @@ public class CommodityServiceImp implements CommodityService {
 
     @Override
     public void del(Commodity commodity) {
-
+        commodityRepository.delete(commodity);
     }
 
     @Override

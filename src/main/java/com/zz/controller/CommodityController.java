@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @RestController
 public class CommodityController {
@@ -17,6 +14,12 @@ public class CommodityController {
     @RequestMapping("/findByName")
    public Commodity findByName(){
         return  commodityService.findByName("张尚卓");
+    }
+    @RequestMapping("del")
+    public String del(Commodity commodity){
+        commodity.setId((long) 1);
+        commodityService.del(commodity);
+        return "ok";
     }
 
 }
